@@ -5,6 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	li{
+		float: left;
+		list-style: none;
+		padding: 10px;
+		cursor: pointer;
+	}
+</style>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <style type="text/css">
 	<style type="text/css">
@@ -242,6 +250,7 @@ footer a:hover{
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
+		
 		// 현재 날짜 가져오기
 		var today = new Date();
 		var year = today.getFullYear();

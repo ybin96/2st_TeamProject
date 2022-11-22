@@ -8,7 +8,7 @@ public class ApplicantVO {
 	private String aName;
 	private String aPhone;
 	private String aEmail;
-	private String aResumePath;
+	private String aTitle;
 	private int aWork;
 	private int aStatus;
 	

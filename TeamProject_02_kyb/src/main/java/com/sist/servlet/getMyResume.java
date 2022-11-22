@@ -2,6 +2,7 @@ package com.sist.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.sist.dao.RecruitDAO;
+import com.sist.vo.AFileVO;
+import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
 
 /**
@@ -32,22 +37,38 @@ public class getMyResume extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		response.setContentType("application/json;charset=utf-8");
 		String name = request.getParameter("name");
 		int type = Integer.parseInt(request.getParameter("type"));
 		String info = request.getParameter("info");
 		
-		System.out.println(name);
-		System.out.println(type);
-		System.out.println(info);
+		RecruitDAO dao = RecruitDAO.getInstance();
+		ApplicantVO app = dao.findMyResume(name, type, info);
+		int cno = app.getANo();
+		ArrayList<ALinkVO> links = dao.findMyLinks(cno);
+		AFileVO file = dao.findMyfile(cno);
 		
-		/*	Gson gson = new Gson();
-		String str = gson.toJson(a);
+		
+		
+		Gson gson = new Gson();
+		String appJson = gson.toJson(app);
+		String linksJson = gson.toJson(links);
+		String fileJson = gson.toJson(file);
+		//str = str.substring(0, str.length() - 1);
+		
+		System.out.println(fileJson);
+		
+		JsonObject jsonObject = new JsonObject();
+		
+        jsonObject.addProperty("info", appJson);
+        jsonObject.addProperty("links", linksJson);
+        jsonObject.addProperty("file", fileJson);
+        String str = gson.toJson(jsonObject);
+        
+		System.out.println(str);
 		PrintWriter out = response.getWriter();
-		System.out.println("gson값"+str);
 		out.print(str);
 		out.close();
-		 */
 	}
 
 	/**

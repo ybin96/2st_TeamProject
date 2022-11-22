@@ -37,7 +37,7 @@
 			</div>
 			<div class="form-group">
 				<div class="radio_div">
-				  <input type="radio" id="radio_email" name="radio" value="0">
+				  <input type="radio" id="radio_email" name="radio" value="0" checked>
 				  <label class="custom-control-label" for="customRadioInline1">이메일</label>
 				</div>
 				<div class="radio_div">

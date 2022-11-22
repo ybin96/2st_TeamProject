@@ -1,5 +1,10 @@
 package com.sist.vo;
 
-public class ScheduleVO {
+import lombok.Data;
 
+@Data
+public class ScheduleVO {
+	private int aNo;                 
+    private int aLevel;              
+    private String aMeeting;
 }

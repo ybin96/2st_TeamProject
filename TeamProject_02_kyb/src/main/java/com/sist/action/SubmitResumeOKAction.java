@@ -15,12 +15,13 @@ import com.sist.vo.AFileVO;
 import com.sist.vo.ALinkVO;
 import com.sist.vo.ApplicantVO;
 
+
 public class SubmitResumeOKAction implements CompanyAction {
 
 	@Override
 	public String pro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String path = request.getRealPath("upload");
+		String path = request.getRealPath("/recruit/upload");
 		//System.out.print(path);
 		MultipartRequest multi = new MultipartRequest(
 				request,
@@ -43,6 +44,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 		String phone = multi.getParameter("aphone");
 		String email = multi.getParameter("aemail");
 		int work = Integer.parseInt(multi.getParameter("awork"));
+		String title = multi.getParameter("atitle");
 		
 		RecruitDAO dao = RecruitDAO.getInstance();
 		
@@ -53,6 +55,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 		a.setAEmail(email);
 		a.setAWork(work);
 		a.setAStatus(0);
+		a.setATitle(title);
 		
 		int re1 = dao.submitResume(a);
 		
@@ -86,7 +89,7 @@ public class SubmitResumeOKAction implements CompanyAction {
 		
 		
 	
-		return "newRecruitInput.jsp";
+		return "newRecruitBoard.jsp";
 	}
 
 }

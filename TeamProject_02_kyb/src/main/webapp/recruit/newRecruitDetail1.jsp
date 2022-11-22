@@ -52,6 +52,10 @@
 		<h2></h2>
 		<p>정규직 &nbsp;&nbsp;&nbsp;&nbsp;</p>
 		<button id="btn_input" type="button" class="btn btn-success active" style="background-color: #9400d3">지원하기</button>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<!-- 이력서 양식 다운로드 -->
+		<a style="color: purple;text-decoration: none" href="./resume.hwp" download>이력서 다운로드</a> 
+
 		<hr>
 	</div>
 		
