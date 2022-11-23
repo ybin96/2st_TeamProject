@@ -71,19 +71,21 @@
 	    		success:function(re){
 	    			if(re>0){
 	    				alert("전송 성공");
+	    				window.close();
 	    			}else{
 	    				alert("전송 실패");
 	    			}
 	    		}
 	    	})
 	    });
+	    <%int aNo = Integer.parseInt(request.getParameter("aNo"));%>
 	});
 </script>
 </head>
 <body>
 	<form action="" id="f">
 	<input type="text" class="datetimepicker" id="testDatepicker" name="date" autocomplete="off"><br>
-	cNo: <input type="text" name="aNo"><br>
+	aNo: <input type="text" name="aNo" value="<%=aNo%>" disabled="disabled"><br>
 	date: <input type="text" name="finalDate" id="date"><br>
 	<button id="btn_add">선택</button>
 	</form>

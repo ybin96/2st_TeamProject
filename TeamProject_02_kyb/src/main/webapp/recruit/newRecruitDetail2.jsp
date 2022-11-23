@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="../infobar.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://kit.fontawesome.com/bb9544ccb9.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	$(function(){
 		
@@ -36,16 +38,14 @@
 </script>
 </head> 
 <body>
-
-<!-- 메뉴창 시작 -->
-<hr>
-<br>
-<br>
-<!-- 메뉴창 끝 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- 메뉴바 시작 -->
+ <jsp:include page="../menu_header.jsp" flush="false"/>
+<!-- 메뉴바 끝 -->	
 
 
 <!-- 메인창 시작 -->
-
+<div style="margin:100px 100px 100px 100px;">
 <div class="container">
 	<!-- 제목 -->
 	<div id="title">
@@ -89,12 +89,14 @@
 		※ 영입 포지션 직군 경력 1년 미만일 시 추가 역량 검증을 위해 정직원 최종 합격 전, 최대 3개월간 계약직으로 근무할 수 있습니다.<br>
 		(단, 신입공채 전형 합격자의 경우에는 관련 경력 1년 미만이라도 정규직으로 입사하게 됩니다.)		
 	</div>
+	</div>
 </div>
 
 <!-- 메인창 끝 -->
 
-<!-- 하단창 시작 -->
-<!-- 하단창 끝 -->
+<!-- 하단바 -->
+	<jsp:include page="../menu_footer.jsp" flush="false"/>
+<!-- 하단바  -->	
 
 </body>
 </html>

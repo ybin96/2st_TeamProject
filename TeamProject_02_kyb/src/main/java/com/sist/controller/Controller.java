@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.sist.action.CompanyAction;
 
-@WebServlet("*.do")
+//@WebServlet("*.do")
 public class Controller extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
