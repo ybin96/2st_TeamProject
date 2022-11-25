@@ -1,7 +1,6 @@
 package com.sist.action;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -25,18 +24,7 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 		
 
 		if(a == null) {
-		
-			 try { String var = "지원서를 넣은 사용자가 아닙니다.";
-			 	response.setContentType("text/html; charset=utf-8"); 
-			 	PrintWriter w = response.getWriter(); 
-			 	w.write("<script>alert('"+var+"');location.href='myRecruitLogin.jsp';</script>");
-			 	w.flush(); 
-			 	w.close(); 
-			 }catch(Exception e) { 
-				 e.printStackTrace(); 
-			 }
-		
-
+			return "loginInfoNone.jsp";
 		}
 		if(a.getAStatus() == 0) {
 			request.setAttribute("name", name);
@@ -49,6 +37,8 @@ public class ApplicantLoginCheckAction implements CompanyAction {
 			request.setAttribute("name", name);
 			request.setAttribute("title", a.getATitle());	
 			request.setAttribute("no", a.getANo());
+			request.setAttribute("type", type);
+			request.setAttribute("info", info);
 			return "myRecruitResult_document.jsp";
 		}
 		if(a.getAStatus() == 2) {

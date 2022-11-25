@@ -66,6 +66,7 @@
 	  <jsp:include page="../menu_header.jsp" flush="false"/>
 <!-- 메뉴바 -->
 	<form action="" method="post" id="oldOrderLogin" style="margin:100px 100px 100px 100px;" >
+	<div class="container">
 		<h1>문의 업체 확인 절차</h1>
 		<div class="col-md-6" >
 		    <label for="cCode" class="form-label">회사 상호명</label>
@@ -80,8 +81,10 @@
 		<div class="col-auto">	
    			<button type="submit" class="btn btn-primary mb-3" value="로그인" style="background-color: #9400d3; border-color: #9400d3;">로그인</button>
  		</div>
- 		<br>		
+ 		<br>	
+ 			</div>		
 	</form>
+
 	<form action="oldOrderDetail.do" method="post" id="logForm">
 		<input type="hidden" name="cNo" id="cNo">
 	</form>

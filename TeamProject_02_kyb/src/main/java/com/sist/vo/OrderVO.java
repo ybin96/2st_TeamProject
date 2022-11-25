@@ -23,3 +23,4 @@ public class OrderVO {
 	private int addInfoNo;
 	private String content;
 }
+

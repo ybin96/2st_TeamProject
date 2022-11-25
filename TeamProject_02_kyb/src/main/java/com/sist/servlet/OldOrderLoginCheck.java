@@ -41,7 +41,6 @@ public class OldOrderLoginCheck extends HttpServlet {
 		response.setContentType("text/plain;charset=utf-8");
 		int cNo = dao.login(cName, cPhone);
 		PrintWriter out = response.getWriter();
-		//System.out.println("cno: "+cno);
 		out.print(cNo);
 		out.close();
 	}

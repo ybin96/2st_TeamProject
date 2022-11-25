@@ -43,7 +43,7 @@
 			],
 	        beforeShowDay: function(date){
 				var day = date.getDay();
-				return [(day != 0 && day != 6)];
+				return [(day != 5 && day != 6)];
 			},
 	        onSelect: function(selectedDate){
 	       		$("#time").removeClass("timeHidden");

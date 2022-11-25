@@ -44,22 +44,22 @@
 		<input type="hidden" value="<%=aTitle %>" name="atitle">
 		<div class="form-group">
 		<label for="aname">이름</label>
-		<input type="text" id="aname" name="aname" class="form-control"><br>
+		<input type="text" id="aname" name="aname" class="form-control" placeholder="이름을 입력해주세요" required="required"><br>
 		</div>
 		<div class="form-group">
 		<label for="aphone">전화번호</label>
-		<input type="text" id="aphone" name="aphone" class="form-control"><br>
+		<input type="text" id="aphone" name="aphone" class="form-control" placeholder="전화번호를 '-'을 제외한 숫자로 입력해주세요" required="required"><br>
 		</div>
 		<div class="form-group">
 		<label for="aemail">이메일</label>
-		<input type="text" id="aemail" name="aemail" class="form-control"><br>
+		<input type="email" id="aemail" name="aemail" class="form-control" placeholder="이메일을 입력해주세요" required="required"><br>
 		</div>
 		<div class="form-group" id ="link">
 		<lable for ="links">블로그 및 GITHUB링크</lable>
 		<button style="background-color: #9400d3" type="button" class="btn btn-dark" id="btnadd">+</button>
 		<button style="background-color: #9400d3" type="button" class="btn btn-dark" id="btnremove">-</button>
 		<br>
-		<input type="text" class="mylink form-control" id="links" name="links"><br class="linkbr">
+		<input type="text" class="mylink form-control" id="links" name="links" class="linkbr" placeholder="블로그 및 링크를 추가해주세요" required="required"><br>
 		</div>
 		<div>
 		<label for="afile">첨부서류</label>

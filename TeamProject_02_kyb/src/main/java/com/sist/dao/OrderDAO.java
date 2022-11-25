@@ -62,6 +62,28 @@ public class OrderDAO {
 		return re;
 	}
 	
+	public int insertOrigin() {
+		int re = -1;
+		
+		String sql = "insert into customerorigin(cno, cProgress) values( (select MAX(cNo)+1 from customerorigin),0 )";
+		Connection conn = null;
+		Statement stmt = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			stmt = conn.createStatement();
+			re = stmt.executeUpdate(sql);				
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(stmt != null) { try{stmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}				
+		
+		return re;
+	}
+	
 	public int insertMeeting(OrderVO o) {
 		int re = -1;
 		String sql = "update CustomerNew set cMeeting=(to_date(?,'yyyy-mm-dd HH24:MI')) where cNo=?";
@@ -85,6 +107,31 @@ public class OrderDAO {
 	}
 	
 	//기존문의
+	
+	public int findBycNo(int cNo) {
+		int re = 0;
+		String sql = "select * from customerOrigin where cNo="+cNo;
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		try {
+			Context context = new InitialContext();
+			DataSource ds =(DataSource) context.lookup("java:/comp/env/mydb");
+			conn = ds.getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				re = rs.getInt("cProgress");
+			}
+		}catch (Exception e) {
+			System.out.println("예외발생:"+e.getMessage());
+		}finally {			
+			if(rs != null) { try{rs.close();}catch(Exception e) {} }
+			if(stmt != null) { try{stmt.close();}catch(Exception e) {} }
+			if(conn != null) { try{conn.close();}catch(Exception e) {} }
+		}				
+		return re;
+	}
 	
 	public int insertFile(OrderVO o) {
 		int re = -1;

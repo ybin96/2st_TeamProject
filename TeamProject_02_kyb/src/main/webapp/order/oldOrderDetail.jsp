@@ -13,7 +13,14 @@
 <script type="text/javascript">
 	$( document ).ready( function() {
 	    $( '#level' ).removeClass( 'row g-3' );
-	   
+	   	if(${cProgress } >10 ){
+	   		console.log("10보다큼");
+	   		$("#cPhoto").attr("src","oldOrderImages/kakao.png");
+	   	}else{
+	   		$("#cPhoto").attr("src","https://cdn.dribbble.com/users/418188/screenshots/3102257/media/3e505857302cdd6a3c142deff7355826.gif");
+	   		$("#text").append( $("<h3></h3>").html("작업이 진행중입니다.") );
+	   	}
+	   	
 	  });
 </script>
 </head>
@@ -28,8 +35,9 @@
 <form id="f" style="margin:100px 100px 100px 100px;" method="post" action="oldOrderOK.do" enctype="multipart/form-data">
 	
 	<h1 id="cName">${cName } 진행상황</h1>
-	<img src="oldOrderImages/kakao.png" style="width:800px; height:500px;" id="cPhoto"><br>
-	
+	<img src="" style="width:800px; height:500px;" id="cPhoto"><br>
+	<div id="text">
+	</div>
 	
 	<label class="form-label"">진행도</label><br>
 	<div class="progress" style="height:30px;">
@@ -62,6 +70,7 @@
 
 </body>
 </html>
+
 
 
 
