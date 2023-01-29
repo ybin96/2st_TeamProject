@@ -1,5 +1,5 @@
 # 2st_TeamProject
-Java + Oracle_회사 홈페이지 제작
+Java + Oracle_ 회사 홈페이지 제작
 
 ## Project
 
